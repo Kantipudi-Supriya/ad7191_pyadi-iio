@@ -23,7 +23,7 @@ class ad719x(rx, context_manager):
         """Constructor for AD719x class."""
         context_manager.__init__(self, uri, self._device_name)
 
-        compatible_parts = ["ad7190", "ad7191","ad7192", "ad7193", "ad7194", "ad7195"]
+        compatible_parts = ["ad7190", "ad7191", "ad7192", "ad7193", "ad7194", "ad7195"]
 
         self._ctrl = None
 
@@ -94,10 +94,10 @@ class ad719x(rx, context_manager):
         ret = None
 
         if isinstance(val, np.int32):
-            ret = (val+_offset)/1000 * _scale
+            ret = (val + _offset) / 1000 * _scale
 
         if isinstance(val, np.ndarray):
-            ret = [((x+_offset)/1000) * _scale for x in val]
+            ret = [((x + _offset) / 1000) * _scale for x in val]
 
         if ret is None:
             raise Exception("Error in converting to actual voltage")
